@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+#___gatsby {
+    width: 85%;
+    margin: 0 auto;
+    font-family: 'Heebo',
+        sans-serif;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul a {
+    margin-left: 1.4em;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}

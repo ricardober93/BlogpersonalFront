@@ -1,0 +1,44 @@
+section.Destacados {
+    margin-top: 40px;
+}
+
+div.title_destacados{
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 2.4em;
+}
+
+.grid{
+    display: grid;
+    grid-template-rows: repeat(3);
+    gap: 40px;
+}
+
+.grid .portafolio_grid{
+    display:flex;
+    flex-direction: row;
+    gap: 50px;
+    border-bottom: 1px solid #21243D;
+}
+
+
+.grid .portafolio_grid .contenido_portafolio .title_contenido{
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.grid .portafolio_grid .contenido_portafolio .title_contenido h1{
+    margin: 0;
+}
+
+.grid .portafolio_grid .contenido_portafolio span{
+    background-color: #21243D;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 99px;
+}
+
+.grid .portafolio_grid .contenido_portafolio p{
+font-size: 1.1em;
+}

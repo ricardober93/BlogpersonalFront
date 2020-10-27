@@ -1,0 +1,45 @@
+.About {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8em;
+}
+
+.About_description {
+    width: 65%;
+    padding: 0 16px;
+}
+
+.About_description h1 {
+    font-size: 1.9em;
+    font-weight: 800;
+    margin: 16px 0;
+    color: #21243D;
+}
+
+.About_description p {
+    font-size: 1.2em;
+    margin: 16px 0;
+    color: #21243D;
+}
+
+.About_description button.download {
+    border: none;
+    border-radius: 2px;
+    background-color: #FF6464 !important;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-weight: 500;
+    font-size: .9em;
+}
+
+.About_imagen {
+    width: 35%;
+}
+
+.About_imagen img {
+    border-radius: 999px;
+    box-shadow: 3px 3px 5px rgba(33, 36, 61, 0.3);
+}

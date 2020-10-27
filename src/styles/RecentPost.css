@@ -1,0 +1,70 @@
+div.RecentPost{
+    margin-top:48px;
+    background-color: #FFEAEA;
+    padding:36px;
+    color:#21243D;
+}
+
+div.RecentPost_header{
+    width: 100%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.RecentPost_header h4{
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.4em;
+}
+div.RecentPost_header p{
+    margin: 0;
+    font-weight: 300;
+    font-size: .8em;
+}
+.RecentPost_lastPost{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.RecentPost_lastPost 
+.lastPost{
+    width: 50%;
+    background-color: #ffffff;
+    padding: 25px;
+}
+
+.title_lastPost{
+    font-size: 1em;
+    color: #21243D;
+    font-weight: 700;
+}
+.group_last{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 9px 0;
+}
+
+.group_last p{
+    margin: 5px 0;
+}
+
+span.divider{
+    margin: 0 7px;
+    font-weight: 700;
+}
+
+
+.content_lastPost p{
+    font-size: 16px;
+    font-weight: 400; 
+}

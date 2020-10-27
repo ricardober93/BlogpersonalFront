@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+}
+
+.footer_gid{
+width: 30%;
+display: flex;
+justify-content: space-around;
+}
+
+p.derechosAutor{
+    font-size: 1.2em;
+    color: #21243D;
+}
