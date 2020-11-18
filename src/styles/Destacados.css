@@ -22,13 +22,13 @@ div.title_destacados{
 }
 
 
-.grid .portafolio_grid .contenido_portafolio .title_contenido{
+.grid .portafolio_grid .contenido_portafolio .title_contenidos{
     font-size: 1.3em;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.grid .portafolio_grid .contenido_portafolio .title_contenido h1{
+.grid .portafolio_grid .contenido_portafolio .title_contenidos h1{
     margin: 0;
 }
 
@@ -41,4 +41,10 @@ div.title_destacados{
 
 .grid .portafolio_grid .contenido_portafolio p{
 font-size: 1.1em;
+}
+
+.imagen_portafolio > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }

@@ -1,24 +1,67 @@
 import React from 'react'
 import '../styles/Destacados.css'
-import imagenPortafolio from '../../static/portafolio.png'
+import { useStaticQuery, graphql } from "gatsby"
+
 export default function Destacados() {
+
+
+    const data = useStaticQuery(graphql`
+  query WorksQuery {
+     allStrapiWork(limit: 2){
+    nodes{
+      id
+      title
+      content
+      publishAt
+       image{
+        publicURL
+        absolutePath
+      }
+      seo{
+        MetaDescription
+        MetaTitle
+      }
+      autor{
+        name
+        picture{
+          publicURL
+        }
+      }
+    }
+    
+  }
+      }
+`)
+    
+      const dateFtm = fecha => {
+    let date = new Date(fecha)
+    let normalizeDate = new Intl.DateTimeFormat("es-ES").format(date)
+    return normalizeDate
+
+  }
+  
+  const substrContent = (content) => {
+    let newContent = content.slice(0,300)
+    return newContent
+  }
+
     return (
         <section className="Destacados">
             <div className="title_destacados">
                 Trabajos Destacados
             </div>
             <div className="grid">
-                {[0, 0, 0].map(el => (
-                    <article className="portafolio_grid">
+                { data.allStrapiWork.nodes.map(el => (
+                    <article className="portafolio_grid" key={el.id}>
                         <div className="imagen_portafolio">
-                            <img src={imagenPortafolio} alt="Iamgen del portafolio" />
+                            <img src={`http://localhost:8000/${el.image.publicURL}`} alt="Iamgen del portafolio" />
                         </div>
                         <div className="contenido_portafolio">
                             <div className="title_contenido">
-                                <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, aspernatur?</h1>
+                                <h1>{ el.title }</h1>
                             </div>
-                            <span>2020</span>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloribus numquam officiis modi minima minus harum nesciunt eaque facere!</p>
+                            <span>{dateFtm(el.publishAt)}</span>
+                            <p>{substrContent(el.content)}</p>
                         </div>
                     </article>
                 ))}

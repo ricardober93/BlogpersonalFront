@@ -5,6 +5,11 @@
     margin: 0 auto;
     font-family: 'Heebo',
         sans-serif;
+    height: 100%;
+}
+
+main{
+    height: 100%;
 }
 
 nav {

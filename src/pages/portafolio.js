@@ -1,9 +1,5 @@
 import React from 'react'
-
+import Layout from "../components/Layout"
 export default function portafolio() {
-    return (
-        <div>
-            
-        </div>
-    )
+    return <Layout> Blog </Layout>
 }

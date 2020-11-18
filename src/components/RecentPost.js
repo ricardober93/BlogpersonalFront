@@ -1,31 +1,63 @@
 import React from 'react'
 import '../styles/RecentPost.css'
+import { useStaticQuery, graphql } from "gatsby"
+import { Link } from 'gatsby'
 export default function RecentPost() {
+
+  const data = useStaticQuery(graphql`
+  query BlogsQuery {
+     allStrapiBlog(limit: 2){
+    nodes{
+      id
+      title
+      content
+      publishAt
+      categoria{
+        name
+      }
+    }
+    
+  }
+      }
+`)
+
+  const dateFtm = fecha => {
+    let date = new Date(fecha)
+    let normalizeDate = new Intl.DateTimeFormat("es-ES").format(date)
+    return normalizeDate
+
+  }
+  
+  const substrContent = (content) => {
+    let newContent = content.slice(0,100)
+    return newContent
+  }
+
     return (
-        <div className="RecentPost">
+        
+      <div className="RecentPost">
             <div className="RecentPost_header">
                 <h4>Recent Post</h4>
-                <a href>Ver más</a>
+                <Link to="/blog" >Ver más</Link>
             </div>
             <section className="RecentPost_lastPost">
-                {
-                    [0, 0].map(el => (
-                        <div className="lastPost">
-                            <div className="title_lastPost">
-                                <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor quo praesentium itaque.</h1>
-                                <div className="group_last">
-                                    <p>12 Feb 2020</p>
-                                    <span className="divider">|</span>
-                                    <p>Categoria</p>
-                                </div>
-                                <div className="content_lastPost">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis laboriosam cupiditate mollitia molestias accusantium? Dolorum delectus, illum, iure, saepe soluta nobis aperiam optio dolor aut cupiditate odio pariatur neque fuga.</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-             }
-             
+            {
+              data.allStrapiBlog.nodes.map(el => (
+                  <div className="lastPost" key={el.id}>
+                      <div className="title_lastPost">
+                          <h1> <Link to={`/blog/${el.id}`} >{el.title}</Link></h1>
+                          <div className="group_last">
+                              <p> {dateFtm(el.publishAt)} </p>
+                              <span className="divider">|</span>
+                              <p> {el.categoria.name} </p>
+                          </div>
+                          <div className="content_lastPost">
+                              <p> {substrContent(el.content)} </p>
+                          </div>
+                      </div>
+                  </div>
+              ))
+          }
             </section>
         </div>
     )

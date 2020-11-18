@@ -1,0 +1,39 @@
+.blog_header{
+    font-size: 44px;
+    font-weight: 800;
+}
+
+.blog_content{
+    width: 80%;
+    margin-top: 50px;
+}
+
+
+
+.blog_content .blog_content_card, .blog_content .blog_content_card h1 {
+    margin-bottom: 7px;
+}
+
+.blog_content_card{
+border-bottom: 1px solid rgba(0,0, 0, 0.3) ;
+}
+
+.blog_content_card h1{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.blog_content .publish{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+.blog_content .publish p {
+    margin: 0;
+}
+
+.blog_content .content{
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+}
