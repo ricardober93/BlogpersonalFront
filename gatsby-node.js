@@ -9,6 +9,9 @@ exports.createPages = async ({ graphql, actions }) => {
           title
           content
           publishAt
+          imagen{
+            publicURL
+          }
           SEO{
             MetaDescription
             MetaTitle

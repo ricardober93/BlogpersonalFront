@@ -2,15 +2,11 @@ import React from "react"
 import Layout from "../components/Layout"
 import '../styles/blog.css'
 import { graphql, Link } from "gatsby"
+import { dateFtm } from "../utils/helper"
 
 export default function blog({ data }) {
 
-    const dateFtm = fecha => {
-        let date = new Date(fecha)
-        let normalizeDate = new Intl.DateTimeFormat("es-ES").format(date)
-        return normalizeDate
 
-    }
 
     const substrContent = (content) => {
         let newContent = content.slice(0, 100)

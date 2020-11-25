@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/RecentPost.css'
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from 'gatsby'
+import { dateFtm } from '../utils/helper'
 export default function RecentPost() {
 
   const data = useStaticQuery(graphql`
@@ -20,13 +21,6 @@ export default function RecentPost() {
   }
       }
 `)
-
-  const dateFtm = fecha => {
-    let date = new Date(fecha)
-    let normalizeDate = new Intl.DateTimeFormat("es-ES").format(date)
-    return normalizeDate
-
-  }
   
   const substrContent = (content) => {
     let newContent = content.slice(0,100)
